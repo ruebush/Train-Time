@@ -67,17 +67,17 @@ $(document).ready(function () {
 
           //convert first train time back a year to make sure it is set before current time before pushing to firebase.
 
-          var firstTrainConverted = moment(time, "hh:mm").subtract(1, "years");
+          var firstTrainConverted = moment(time, "HH:mm").subtract(1, "years");
           console.log(firstTrainConverted);
 
           //set a variable equal to the current time from moment.js
 
           var currentTime = moment();
-          console.log("Current Time: " + moment(currentTime).format("hh:mm"));
+          console.log("Current Time: " + moment(currentTime).format("HH:mm"));
 
           //post current time to jumbotron for reference
 
-          $("#currentTime").html("Current Time: " + moment(currentTime).format("hh:mm"));
+          $("#currentTime").html("Current Time: " + moment(currentTime).format("HH:mm"));
 
           //find the difference between the first train time and the current time
 
@@ -97,7 +97,7 @@ $(document).ready(function () {
           //find the time of the next train arrival
 
           var nextTrainAdd = moment().add(nextTrainMin, "minutes");
-          var nextTrainArr = moment(nextTrainAdd).format("hh:mm");
+          var nextTrainArr = moment(nextTrainAdd).format("HH:mm");
           console.log("Arrival Time: " + nextTrainArr);
 
           //prepend all information for train data submitted by user
